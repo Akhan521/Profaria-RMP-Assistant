@@ -1,9 +1,27 @@
 {
   "reviews": [
     {
-      "professor": "Prof1",
-      "review": "Great professor...",
-      "subject": "Math",
+      "professor": "Tofigh Heidarzadeh",
+      "review": "He is a decent professor. He is quite difficult to reach. However, he is nice and helpful during class.",
+      "subject": "History",
+      "stars": 4
+    },
+    {
+      "professor": "Amey Bangale",
+      "review": "He is a great professor. He is very knowledgeable and understanding. He is always available to help.",
+      "subject": "Computer Science",
+      "stars": 4.5
+    },
+    {
+      "professor": "Hamid Vaezi",
+      "review": "He is a great professor, but can seem disorganized at times. He loves to improvise his lectures.",
+      "subject": "Computer Science",
+      "stars": 4.75
+    },
+    {
+      "professor": "Paea LePendu",
+      "review": "He is a wonderful Computer Science professor. He truly cares about his students and their success. He makes learning a priority, not grades.",
+      "subject": "Computer Science",
       "stars": 5
     }
   ]
