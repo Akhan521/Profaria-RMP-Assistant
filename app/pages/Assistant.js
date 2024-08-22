@@ -176,7 +176,6 @@ function Assistant() {
         </Stack>
         <Stack direction={'row'} spacing={2}>
           <TextField
-            
             label="Message"
             fullWidth
             value={message}

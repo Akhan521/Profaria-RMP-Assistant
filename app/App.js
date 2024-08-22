@@ -11,7 +11,7 @@ const THEME = createTheme({
     fontWeightMedium: 500,
     fontWeightBold: 700,
     fontFamily: [
-      'DM Serif Text',
+     'DM Serif Text',
       'serif',
     ].join(','),
   },
