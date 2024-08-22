@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import styles from '../app/scroll-paragraph.module.css';
 import { useScroll, motion, useTransform } from "framer-motion";
 
-export default function ScrollParagraph({value}) {
+export default function ScrollParagraph({value, color}) {
 
     const element = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -15,6 +15,7 @@ export default function ScrollParagraph({value}) {
 
     return (
         <p
+            style={{color: color}}
             className={styles.paragraph}
             ref={element}
         >

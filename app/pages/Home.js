@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Head from "next/head";
@@ -17,7 +17,23 @@ function Home() {
         >
             <div style={{height: "100vh"}}></div>
             <ScrollParagraph value={paragraph} />
-            <div style={{height: "100vh"}}></div>
+            
+            <Box
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                height='100vh'
+            >
+                <Link
+                    to='/assistant'
+                    // when hovering, the button will change color
+
+                >
+                    <ScrollParagraph value={"Get started by clicking here."} color={'#819171'}/>
+                </Link>
+                <div style={{height: '85vh'}}></div>
+            </Box>
         </main>
     );
 };
