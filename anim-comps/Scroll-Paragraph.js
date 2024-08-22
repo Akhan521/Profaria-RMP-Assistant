@@ -8,7 +8,7 @@ export default function ScrollParagraph({value, color}) {
     const element = useRef(null);
     const { scrollYProgress } = useScroll({
         target: element,
-        offset: ['start 0.9', 'start 0.25'],
+        offset: ['start 0.8', 'start 0.25'],
     });
 
     const words = value.split(" ");

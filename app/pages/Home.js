@@ -27,8 +27,6 @@ function Home() {
             >
                 <Link
                     to='/assistant'
-                    // when hovering, the button will change color
-
                 >
                     <ScrollParagraph value={"Get started by clicking here."} color={'#819171'}/>
                 </Link>

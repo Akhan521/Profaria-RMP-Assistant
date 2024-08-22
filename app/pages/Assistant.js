@@ -3,7 +3,7 @@ import { Box, Button, Stack, TextField } from '@mui/material';
 import { useRef, useState, useEffect } from 'react';
 import { motion, useMotionTemplate, useMotionValue, animate } from 'framer-motion';
 
-const COLORS = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+const COLORS = ["#AC7E6E", "#C9ADA7", "#EADBD6", "#9A8C98", "#97A2A6"];
 
 const typingSpeed = 30; // Speed of typing can be adjusted here
 
@@ -176,6 +176,7 @@ function Assistant() {
         </Stack>
         <Stack direction={'row'} spacing={2}>
           <TextField
+            
             label="Message"
             fullWidth
             value={message}
