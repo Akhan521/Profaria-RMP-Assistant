@@ -87,7 +87,7 @@ function Assistant() {
 
   const color = useMotionValue(COLORS[0]);
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
-  const border = useMotionTemplate`1px solid ${color}`;
+  const border = useMotionTemplate`2px solid ${color}`;
   const boxShadow = useMotionTemplate`0 4px 24px ${color}`;
 
   useEffect(() => {

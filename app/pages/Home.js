@@ -8,6 +8,7 @@ import ScrollParagraph from '@/anim-comps/Scroll-Paragraph';
 import FadeInText from '@/anim-comps/FadeIn-Text';
 import TwinkleText from '@/anim-comps/Twinkle-Text';
 import { motion } from 'framer-motion';
+import Spline from '@splinetool/react-spline';
 
 const paragraph = `Profaria is an AI assistant that helps you find the best professors for your classes.`;
 
@@ -50,9 +51,21 @@ function Home() {
                     </Typography>
                 </motion.div>
 
-                <Typography variant="h4" sx={{color: 'white', paddingTop: '5vh'}}>
-                    <TwinkleText text="Scroll to Learn More" color={'#819171'} />
-                </Typography>
+                <div
+                    style={{
+                        paddingTop: '2vh',
+                        width: '95vw',
+                        height: '75vh',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: '25px',
+                    }}
+                >
+                <Spline
+                    scene="https://prod.spline.design/KD4uqAG9TPKEyp-R/scene.splinecode" 
+                />
+                </div>
                 
                 
             </Box>
