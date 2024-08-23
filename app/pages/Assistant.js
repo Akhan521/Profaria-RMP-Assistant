@@ -87,6 +87,8 @@ function Assistant() {
 
   const color = useMotionValue(COLORS[0]);
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
+  const border = useMotionTemplate`1px solid ${color}`;
+  const boxShadow = useMotionTemplate`0 4px 24px ${color}`;
 
   useEffect(() => {
     animate(color, COLORS, {
@@ -175,36 +177,45 @@ function Assistant() {
           <div ref={messagesEndRef} />
         </Stack>
         <Stack direction={'row'} spacing={2}>
-          <TextField
-            label="Message"
-            fullWidth
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyDown={handleKeyPress}
-            disabled={isLoading}
-            sx={{
-              "& label": {
-                color: "white",
-              },
-              "&:hover label": {
-                color: "white", // Sets the label color to white on hover
-              },
-              "& .MuiInputBase-input": {
-                color: "white", // Sets the text color inside the input field to white
-              },
-              "& .MuiOutlinedInput-root": {
-                "& fieldset": {
-                  borderColor: "white",
-                },
-                "&:hover fieldset": {
-                  borderColor: "#9A9498",
-                },
-                "&.Mui-focused fieldset": {
-                  borderColor: "white",
-                },
-              },
+          <motion.div
+            style={{
+              border,
+              boxShadow,
+              width: '100%',
+              borderRadius: 6,
             }}
-          />
+          >
+            <TextField
+              label="Message"
+              fullWidth
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onKeyDown={handleKeyPress}
+              disabled={isLoading}
+              sx={{
+                "& label": {
+                  color: "white",
+                },
+                "&:hover label": {
+                  color: "white",
+                },
+                "& .MuiInputBase-input": {
+                  color: "white", // Sets the text color inside the input field to white
+                },
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#9A9498",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "white",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "white",
+                  },
+                },
+              }}
+            />
+          </motion.div>
           <Button variant="contained" onClick={sendMessage} disabled={isLoading}>
             {isLoading ? "Sending..." : "Send"}
           </Button>
