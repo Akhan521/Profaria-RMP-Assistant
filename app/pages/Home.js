@@ -18,6 +18,7 @@ function Home() {
         <main
             style={{
                 backgroundColor: "#121212",
+                scrollBehavior: 'smooth',
             }}
         >
             <Box
@@ -26,7 +27,7 @@ function Home() {
                 alignItems="center"
                 height='100vh'
                 sx={{
-                    paddingTop: '10vh',
+                    paddingTop: '5vh',
                     color: 'white',
                 }}
             >
@@ -39,6 +40,10 @@ function Home() {
                       stiffness: 260,
                       damping: 80
                     }}
+                    style={{
+                        paddingBottom: '2.5vh'
+                    }}
+                    
                 >
                     <Typography
                         variant="h1"
@@ -53,20 +58,20 @@ function Home() {
 
                 <div
                     style={{
-                        paddingTop: '2vh',
+                        paddingTop: '5vh',
                         width: '95vw',
-                        height: '75vh',
+                        height: '80vh',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        borderRadius: '25px',
+                        borderRadius: '10px',
+                        backgroundColor: 'white',
                     }}
                 >
                 <Spline
                     scene="https://prod.spline.design/KD4uqAG9TPKEyp-R/scene.splinecode" 
                 />
                 </div>
-                
                 
             </Box>
             <ScrollParagraph value={paragraph} />
