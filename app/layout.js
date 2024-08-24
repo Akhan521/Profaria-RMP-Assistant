@@ -1,5 +1,7 @@
 import { DM_Serif_Text } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+
 
 const dmSerif = DM_Serif_Text({ subsets: ["latin"], weight: '400', });
 
@@ -10,8 +12,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body className={dmSerif.className}>{children}</body>
     </html>
+    </ClerkProvider>
   );
 }
