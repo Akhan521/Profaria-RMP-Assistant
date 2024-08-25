@@ -26,7 +26,6 @@ function Home() {
             <Head>
                 <title>Profaria AI Assistant</title>
             </Head>
-
             <Box
                 display="flex"
                 flexDirection="column"
