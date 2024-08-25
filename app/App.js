@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './pages/Home.js';
 import Assistant from './pages/Assistant.js';
-import SignIn from './sign-in/[[...sign-in]]/Page.js';  
+import SignIn from './sign-in/[[...sign-in]]/page.js';  
+import SignUp from './sign-up/[[...sign-up]]/page.js'; 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route path="/assistant" element={<Assistant />} />
             <Route path="/sign-in" element={<SignIn />} /> 
+            <Route path="/sign-up" element={<SignUp />} /> 
           </Routes>
         </Router>
       </ThemeProvider>
