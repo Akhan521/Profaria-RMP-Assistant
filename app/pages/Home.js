@@ -9,11 +9,13 @@ import FadeInText from '@/anim-comps/FadeIn-Text';
 import TwinkleText from '@/anim-comps/Twinkle-Text';
 import { motion } from 'framer-motion';
 import Spline from '@splinetool/react-spline';
+import { SignIn, UserButton, useUser } from '@clerk/nextjs';
 
 const paragraph = `Profaria is an AI assistant that helps you find the best professors for your classes.`;
 
 function Home() {
-    
+    const { isSignedIn } = useUser();
+
     return (
         <main
             style={{
@@ -21,6 +23,9 @@ function Home() {
                 scrollBehavior: 'smooth',
             }}
         >
+            <Head>
+                <title>Profaria AI Assistant</title>
+            </Head>
             <Box
                 display="flex"
                 flexDirection="column"
@@ -43,7 +48,6 @@ function Home() {
                     style={{
                         paddingBottom: '2.5vh'
                     }}
-                    
                 >
                     <Typography
                         variant="h1"
@@ -74,8 +78,9 @@ function Home() {
                 </div>
                 
             </Box>
+
             <ScrollParagraph value={paragraph} />
-            
+
             <Box
                 display="flex"
                 flexDirection="column"
@@ -83,12 +88,19 @@ function Home() {
                 alignItems="center"
                 height='100vh'
             >
-                <Link
-                    to='/assistant'
-                >
-                    <ScrollParagraph value={"Get started by clicking here."} color={'#819171'}/>
-                </Link>
-                <div style={{height: '85vh'}}></div>
+                {isSignedIn ? (
+                    <>
+                        <UserButton />
+                        <Link to='/assistant'>
+                            <ScrollParagraph value={"Get started by clicking here."} color={'#819171'} />
+                        </Link>
+                    </>
+                ) : (
+                    <Link to='/sign-in'>
+                        <ScrollParagraph value={"Sign in to get started."} color={'#819171'} />
+                    </Link>
+                )}
+                <div style={{ height: '85vh' }}></div>
             </Box>
         </main>
     );
