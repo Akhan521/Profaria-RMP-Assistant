@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './pages/Home.js';
 import Assistant from './pages/Assistant.js';
-import SignIn from './sign-in/[[...sign-in]]/page.js';  
+import SignIn from './sign-in/[[...sign-in]]/page.js';
 import SignUp from './sign-up/[[...sign-up]]/page.js'; 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
