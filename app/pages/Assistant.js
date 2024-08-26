@@ -2,6 +2,7 @@
 import { Box, Button, Stack, TextField } from '@mui/material';
 import { useRef, useState, useEffect } from 'react';
 import { motion, useMotionTemplate, useMotionValue, animate } from 'framer-motion';
+import Markdown from 'react-markdown';
 
 const COLORS = ["#AC7E6E", "#C9ADA7", "#EADBD6", "#9A8C98", "#97A2A6"];
 
@@ -26,7 +27,8 @@ function TypingMessage({ text }) {
     return () => clearInterval(timer);
   }, [text]);
 
-  return <span className="typing">{displayText}</span>;
+  
+  return <span className="typing"><Markdown>{displayText}</Markdown></span>;
 }
 
 function Assistant() {
@@ -34,7 +36,7 @@ function Assistant() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: `Hi! I'm the Rate My Professor support assistant. How can I help you today?`,
+      content: `Hi! I'm Profaria's support assistant. How can I help you succeed in your education today?`,
     },
   ])
   const [message, setMessage] = useState('');
@@ -51,7 +53,7 @@ function Assistant() {
       {role: 'assistant', content: ''},
     ]);
 
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+    await new Promise((resolve) => setTimeout(resolve, 10000));
   
     const response = fetch('/api/chat', {
       method: 'POST',
@@ -149,7 +151,7 @@ function Assistant() {
           flexGrow={1}
           overflow="auto"
           maxHeight="100%"
-          p={2}
+          p={3}
         >
           {messages.map((message, index) => (
             <Box
@@ -159,19 +161,27 @@ function Assistant() {
                 message.role === 'assistant' ? 'flex-start' : 'flex-end'
               }
             >
-              <Box
-                bgcolor={
-                  message.role === 'assistant'
-                    ? 'primary.main'
-                    : 'secondary.main'
-                }
-                color="white"
-                borderRadius={16}
-                p={3}
-                sx={{ maxWidth: "fit-content", width: "auto" }}
+              <motion.div
+                style={{
+                  border,
+                  boxShadow,
+                  borderRadius: 62,
+                }}
               >
-                <TypingMessage key={message.content} text={message.content} />
-              </Box>
+                <Box
+                  bgcolor={
+                    message.role === 'assistant'
+                      ? '#121212'
+                      : 'secondary.main'
+                  }
+                  color="white"
+                  borderRadius={16}
+                  p={4}
+                  sx={{ maxWidth: "fit-content", width: "100%" }}
+                >
+                  <TypingMessage key={message.content} text={message.content} />
+                </Box>
+              </motion.div>
             </Box>
           ))}
           <div ref={messagesEndRef} />
