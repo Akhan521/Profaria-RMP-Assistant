@@ -52,8 +52,6 @@ function Assistant() {
       {role: 'user', content: message},
       {role: 'assistant', content: ''},
     ]);
-
-    await new Promise((resolve) => setTimeout(resolve, 10000));
   
     const response = fetch('/api/chat', {
       method: 'POST',

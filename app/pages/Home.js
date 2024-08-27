@@ -50,10 +50,10 @@ function Home() {
                     }}
                 >
                     <Typography
-                        variant="h1"
+                        variant='p'
                         sx={{
                             color: 'white',
-                            fontSize: '5rem',
+                            fontSize: '50px',
                         }}
                     >
                         <FadeInText text="Welcome to Profaria" color={'white'} duration={5} />
