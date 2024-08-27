@@ -1,3 +1,11 @@
+.git-link {
+  color: white;
+}
+
+.git-link:hover {
+  color: #C9ADA7;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

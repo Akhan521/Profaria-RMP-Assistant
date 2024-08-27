@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography, Grid } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Head from "next/head";
@@ -100,7 +100,149 @@ function Home() {
                         <ScrollParagraph value={"Sign in to get started."} color={'#819171'} />
                     </Link>
                 )}
-                <div style={{ height: '85vh' }}></div>
+                <div 
+                    style={{
+                        height: '45vh',
+                    }}
+                >
+                </div>
+                <Typography
+                    variant='p'
+                    style={{
+                        color: 'white',
+                        fontSize: '50px',
+                    }}
+                >
+                    <ScrollParagraph value={"About Us"} color={'white'} />
+                </Typography>
+                <Grid container spacing = {4} style={{padding: '50px'}}>
+                    <Grid item xs={12} md={4}>
+                        <motion.div 
+                            whileHover={{
+                                scale: 0.9,
+                                boxShadow: '0 0 10px #9A8C98',
+                                borderRadius: 12,
+                                transition: 'box-shadow 0.3s ease-in-out',
+                            }}
+                            >
+                            <Box sx={{
+                                p: 3,
+                                border: '1px solid',
+                                borderColor: 'grey.300',
+                                borderRadius: 2,
+                                minHeight: 100,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                }}>
+                                <Typography 
+                                    variant="p" 
+                                    gutterBottom
+                                    sx={{
+                                        color: '#819171',
+                                        fontSize: '50px',
+                                    }}> Aamir Khan 
+                                </Typography>
+                                <Typography 
+                                    variant="p" 
+                                    gutterBottom
+                                    sx={{
+                                        color: 'white',
+                                        fontSize: '25px',
+                                        textAlign: 'center',
+                                    }}>
+                                    <Link to='https://github.com/Akhan521'className='git-link'>To view my Github profile, click here.</Link>
+                                </Typography>
+                            </Box>
+                        </motion.div>
+                    </Grid>
+                        <Grid item xs={12} md={4}>
+                        <motion.div 
+                            whileHover={{
+                                scale: 0.9,
+                                boxShadow: '0 0 10px #9A8C98',
+                                borderRadius: 12,
+                                transition: 'box-shadow 0.3s ease-in-out',
+                            }}
+                            >
+                            <Box sx={{
+                                p: 3,
+                                border: '1px solid',
+                                borderColor: 'grey.300',
+                                borderRadius: 2,
+                                minHeight: 150,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                }}>
+                                <Typography 
+                                    variant="p" 
+                                    gutterBottom
+                                    sx={{
+                                        color: '#819171',
+                                        fontSize: '50px',
+                                    }}> Anna Lee 
+                                </Typography>
+                                <Typography 
+                                    variant="p" 
+                                    gutterBottom
+                                    sx={{
+                                        color: 'white',
+                                        fontSize: '25px',
+                                        textAlign: 'center',
+                                    }}>
+                                        <Link to='https://github.com/annlee1226' className='git-link'>To view my Github profile, click here.</Link>
+                                </Typography>
+                            </Box>
+                        </motion.div>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                    <motion.div 
+                            whileHover={{
+                                scale: 0.9,
+                                boxShadow: '0 0 10px #9A8C98',
+                                borderRadius: 12,
+                                transition: 'box-shadow 0.3s ease-in-out',
+                            }}
+                            >
+                            <Box sx={{
+                                p: 3,
+                                border: '1px solid',
+                                borderColor: 'grey.300',
+                                borderRadius: 2,
+                                minHeight: 150,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                }}>
+                                <Typography 
+                                    variant="p" 
+                                    gutterBottom
+                                    sx={{
+                                        color: '#819171',
+                                        fontSize: '50px',
+                                    }}> Falak Tulsi 
+                                </Typography>
+                                <Typography 
+                                    variant="p" 
+                                    gutterBottom
+                                    sx={{
+                                        color: 'white',
+                                        fontSize: '25px',
+                                        textAlign: 'center',
+                                    }}>
+                                        <Link
+                                            to='https://github.com/Tech13-08'
+                                            className='git-link'
+                                        >To view my Github profile, click here.</Link>
+                                </Typography>
+                            </Box>
+                        </motion.div>
+                    </Grid>
+                </Grid>
             </Box>
         </main>
     );
